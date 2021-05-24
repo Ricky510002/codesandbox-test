@@ -1,28 +1,37 @@
-//スプレッド構文
+//mapやfilterを使った配列の処理
+//これのおかげでfor文をほとんど使わなくなった
 
-const arr1 = [1, 2];
-// console.log(arr1);
-// 配列の展開(値を１つずつd出してくれる)
-// console.log(...arr1);
+const nameArr = ["Aさん", "Bさん", "Cさん"];
 
-const sumFunc = (num1, num2) => console.log(num1 * num2);
+for (let i = 0; i < nameArr.length; i++) {
+  console.log(nameArr[i]);
+}
 
-sumFunc(arr1[0], arr1[1]);
-sumFunc(...arr1);
-//↑同じ結果になる
+const nameArr2 = nameArr.map((name) => {
+  return name;
+});
+console.log(nameArr2);
+//mapはある配列の中身を引数として処理して新しい配列を返す。
+//１つ目の引数は配列の中身で２つ目はindex番号
 
-//まとめる
-const arr2 = [1, 2, 3, 4, 5];
-const [num1, num2, ...arr3] = arr2;
-console.log(arr3);
+//処理だけしたいなら
+nameArr.map((name) => console.log(name));
 
-//配列のコピー、結合
+//filter
+//filterはある条件に一致したものだけを取得して新しい配列を生成する。
 
-const arr4 = [10, 20];
-const arr5 = [30, 40];
+const numArr = [1, 2, 3, 4, 5];
+const newNumArr = numArr.filter((num) => {
+  return num % 2 === 0;
+});
 
-//arr4をコピー
-const arr6 = [...arr4];
-//arr4 arr5を結合
-const arr7 = [...arr4, ...arr5];
-console.log(arr7);
+console.log(newNumArr);
+
+//ifとmapの応用例 Aさん以外にですをつける
+nameArr.map((name) => {
+  if (name === "Aさん") {
+    return console.log(name);
+  } else {
+    return console.log(`${name}です`);
+  }
+});
