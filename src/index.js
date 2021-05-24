@@ -1,25 +1,28 @@
-//オブジェクト
-const profile = {
-  name: "taro",
-  age: 20
-};
-//配列
-const number = [0, 1, 3, 3, 4];
+//スプレッド構文
 
-const message1 = `名前は${profile.name}で、年は${profile.age}です`;
-const num_message1 = `一つ目の数は${number[0]}です。`;
-console.log(message1);
-console.log(num_message1);
+const arr1 = [1, 2];
+// console.log(arr1);
+// 配列の展開(値を１つずつd出してくれる)
+// console.log(...arr1);
 
-//分割代入を利用する(配列、オブジェクトにできる)
-// const {プロパティ名１,プロパティ名２} = どこのオブジェクトか
+const sumFunc = (num1, num2) => console.log(num1 * num2);
 
-const { name, age } = profile;
-const message2 = `名前は${name}で、年は${age}です`;
-console.log(message2);
+sumFunc(arr1[0], arr1[1]);
+sumFunc(...arr1);
+//↑同じ結果になる
 
-const [A, B] = number;
-const num_message2 = `一つ目の数は${A}です。`;
-console.log(num_message2);
+//まとめる
+const arr2 = [1, 2, 3, 4, 5];
+const [num1, num2, ...arr3] = arr2;
+console.log(arr3);
 
-//分割代入は配列やオブジェクトの値を取ってきて新しい変数に代入でき、使いやすくする。
+//配列のコピー、結合
+
+const arr4 = [10, 20];
+const arr5 = [30, 40];
+
+//arr4をコピー
+const arr6 = [...arr4];
+//arr4 arr5を結合
+const arr7 = [...arr4, ...arr5];
+console.log(arr7);
