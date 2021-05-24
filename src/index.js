@@ -1,10 +1,22 @@
-import "./styles.css";
+// 関数
+const abc = function (str) {
+  return str;
+};
 
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use the same configuration as Parcel to bundle this sandbox, you can find more
-  info about Parcel 
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
-`;
+console.log(abc("gbc"));
+
+// アロー関数
+// const 名前　= (引数) => {
+//   return やりたい処理；
+// }
+
+//引数一つなら（）省略可
+//returnの中身も１行ならreturn省略可 {}で囲ったらreturn必要
+
+const bbb = (num) => {
+  return num * num;
+};
+console.log(bbb(8));
+
+const ccc = (num) => num + num;
+console.log(ccc(4));
