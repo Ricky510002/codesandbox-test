@@ -1,22 +1,25 @@
-// 関数
-const abc = function (str) {
-  return str;
+//オブジェクト
+const profile = {
+  name: "taro",
+  age: 20
 };
+//配列
+const number = [0, 1, 3, 3, 4];
 
-console.log(abc("gbc"));
+const message1 = `名前は${profile.name}で、年は${profile.age}です`;
+const num_message1 = `一つ目の数は${number[0]}です。`;
+console.log(message1);
+console.log(num_message1);
 
-// アロー関数
-// const 名前　= (引数) => {
-//   return やりたい処理；
-// }
+//分割代入を利用する(配列、オブジェクトにできる)
+// const {プロパティ名１,プロパティ名２} = どこのオブジェクトか
 
-//引数一つなら（）省略可
-//returnの中身も１行ならreturn省略可 {}で囲ったらreturn必要
+const { name, age } = profile;
+const message2 = `名前は${name}で、年は${age}です`;
+console.log(message2);
 
-const bbb = (num) => {
-  return num * num;
-};
-console.log(bbb(8));
+const [A, B] = number;
+const num_message2 = `一つ目の数は${A}です。`;
+console.log(num_message2);
 
-const ccc = (num) => num + num;
-console.log(ccc(4));
+//分割代入は配列やオブジェクトの値を取ってきて新しい変数に代入でき、使いやすくする。
