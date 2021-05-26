@@ -1,37 +1,16 @@
-//mapやfilterを使った配列の処理
-//これのおかげでfor文をほとんど使わなくなった
+///三項演算子
+//if文をもっと簡潔にしたような感じ
 
-const nameArr = ["Aさん", "Bさん", "Cさん"];
+// 条件　？　trueの時の処理 : falseの時の処理
 
-for (let i = 0; i < nameArr.length; i++) {
-  console.log(nameArr[i]);
-}
+const val1 = 1 > 0 ? "trueです" : "falseです";
 
-const nameArr2 = nameArr.map((name) => {
-  return name;
-});
-console.log(nameArr2);
-//mapはある配列の中身を引数として処理して新しい配列を返す。
-//１つ目の引数は配列の中身で２つ目はindex番号
+console.log(val1);
 
-//処理だけしたいなら
-nameArr.map((name) => console.log(name));
+const num = 1300;
+//toLocaleString()は1,300のようにしてくれる
+console.log(num.toLocaleString());
 
-//filter
-//filterはある条件に一致したものだけを取得して新しい配列を生成する。
-
-const numArr = [1, 2, 3, 4, 5];
-const newNumArr = numArr.filter((num) => {
-  return num % 2 === 0;
-});
-
-console.log(newNumArr);
-
-//ifとmapの応用例 Aさん以外にですをつける
-nameArr.map((name) => {
-  if (name === "Aさん") {
-    return console.log(name);
-  } else {
-    return console.log(`${name}です`);
-  }
-});
+const formatNum =
+  typeof num === "number" ? num.toLocaleString() : "数を入力してください";
+console.log(formatNum);
