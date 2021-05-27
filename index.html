@@ -3,44 +3,23 @@
   <head>
     <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
 
   <body>
-    <div>
-      <input type="text" />
-      <button>追加</button>
+    <div class="inputArea">
+      <input id="addText" placeholder="TODOを入力" type="text" />
+      <button id="addButton">追加</button>
     </div>
 
-    <div>
+    <div class="listArea">
       <h2>TODOリスト</h2>
-      <ul>
-        <li>
-          <p>Udemy勉強</p>
-          <button>完了</button>
-          <button>削除</button>
-        </li>
-        <li>
-          <p>Udemy勉強</p>
-          <button>完了</button>
-          <button>削除</button>
-        </li>
-      </ul>
+      <ul id="todoList"></ul>
     </div>
 
-    <div>
+    <div class="finishArea">
       <h2>終わったこと</h2>
-      <ul>
-        <li>
-          <p>Udemy勉強</p>
-          <button>完了</button>
-          <button>削除</button>
-        </li>
-        <li>
-          <p>Udemy勉強</p>
-          <button>完了</button>
-          <button>削除</button>
-        </li>
-      </ul>
+      <ul id="finishList"></ul>
     </div>
 
     <script src="src/index.js"></script>
